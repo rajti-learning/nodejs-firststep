@@ -15,7 +15,7 @@ const pickOne = array => {
 
 
 const phoneGenerator = () => {
-    let phoneNumber = [];
+    const phoneNumber = [];
     let telephone = 'XXX-XXX-XXX';
 
     for (let i = 0; i < 9; i++) {
@@ -31,13 +31,21 @@ const phoneGenerator = () => {
 
 
 for (let i = 0; i < 20; i++) {
+
+    const gender = pickOne(genders);
+    const firstName = gender === 'M' ? pickOne(maleNames) : pickOne(femaleNames);
+    const lastName = pickOne(lastNames);
+    const age = Math.floor(Math.random()*60+18);
+    const mail = `${firstName}.${lastName}@mail.com`;
+    const phone = phoneGenerator();
+
     card = {
-        gender: gender = pickOne(genders),
-        firstName: gender === "M" ? firstName = pickOne(maleNames) : firstName = pickOne(femaleNames),
-        lastName: lastName = pickOne(lastNames),
-        age: Math.floor(Math.random()*60+18),
-        mail: `${firstName}.${lastName}@mail.com`,
-        phone: phoneGenerator(),
+        gender: gender,
+        firstName: firstName,
+        lastName: lastName,
+        age: age,
+        mail: mail,
+        phone: phone,
     };
    
     identity.push(card);
