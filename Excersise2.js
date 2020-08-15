@@ -12,8 +12,6 @@ const pickOne = array => {
     return array[Math.floor(Math.random()*array.length)];
 };
 
-
-
 const phoneGenerator = () => {
     const phoneNumber = [];
     let telephone = 'XXX-XXX-XXX';
@@ -28,7 +26,6 @@ const phoneGenerator = () => {
 
     return telephone;
 };
-
 
 for (let i = 0; i < 20; i++) {
 
